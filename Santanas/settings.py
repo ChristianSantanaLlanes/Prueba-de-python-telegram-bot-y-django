@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,18 @@ MEDIA_ROOT = '/home/christian/Santanas/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/christian/Santanas/static'
 STATIC_URL = '/static/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+
+    ),
+
+    'DEFAULT_PERMISSION_CLASSES': (
+
+        'rest_framework.permissions.IsAuthenticated',
+
+    )
+}
